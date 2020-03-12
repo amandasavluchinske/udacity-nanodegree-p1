@@ -45,13 +45,16 @@ def get_phone_and_time_with_highest_amount_of_seconds():
         calls = list(reader)
         for phone in get_all_unique_phone_numbers():
             amount_of_time_spent = 0
+
             for call in calls:
                 if phone in [call[0], call[1]]:
                     amount_of_time_spent += int(call[3])
+
             if not amount_of_time_spent > highest_amount:
                 continue
             highest_amount = amount_of_time_spent
             phone_number = phone
+
     return {"seconds": highest_amount, "phone": phone_number}
 
 results = get_phone_and_time_with_highest_amount_of_seconds()

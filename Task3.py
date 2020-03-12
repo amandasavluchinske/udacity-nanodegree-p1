@@ -43,3 +43,36 @@ Print the answer as a part of a message::
 to other fixed lines in Bangalore."
 The percentage should have 2 decimal digits
 """
+
+def get_area_code(phone):
+    if phone[0] == '(':
+        return phone[1:].split(')', 1)[0]
+    if phone[0] in [7, 8, 9]:
+        return phone[0:3]
+    if phone[0:3] == 140:
+        return 140
+    return None
+
+def get_codes_called_by_people_in_bangalore():
+    list_of_codes = []
+    with open('calls.csv', 'r') as f:
+        reader = csv.reader(f)
+        calls = list(reader)
+
+        for call in calls:
+            # Checks if first 5 chars of the number are (080)
+            if call[0][0:5] == '(080)':
+                code = get_area_code(call[1])
+                if not code:
+                    continue
+                list_of_codes.append(code)
+    return list(set(list_of_codes))
+
+def print_out_list_of_codes():
+    list_of_codes = get_codes_called_by_people_in_bangalore()
+    list_of_codes.sort()
+    print("The numbers called by people in Bangalore have codes:")
+    for code in list_of_codes:
+        print(code)
+
+print_out_list_of_codes()
