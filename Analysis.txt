@@ -1,0 +1,27 @@
+---- Task0.py ----
+
+Order: O(1)
+Explanation: In this case, there's no variance in the time the functions will take to run as the function will
+always try to do the same thing regardless of the input: access an index of a list, making it O(1).
+
+---- Task1.py ----
+
+Order: O(n)
+Explanation: This one is of the order O(n) because it will iterate over the input, so the time it will
+take to complete depends on the amount of lines in that input (in this case, a list), making it run in linear time.
+
+---- Task2.py ----
+
+Order: O(n^2)
+Explanation: This one runs quadratically because I wrote a for loop inside another for loop.
+
+---- Task3.py ----
+
+Order: O(n)
+Explanation: This one is linear because I'm only iterating once over the input, so the time will vary according
+to the size of that input.
+
+---- Task4.py ----
+
+Order: O(n^2)
+Explanation: This is quadratic as well because I have for loop iterations inside a for loop iteration in detect_telemarketers().

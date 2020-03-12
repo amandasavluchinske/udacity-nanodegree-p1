@@ -60,5 +60,3 @@ def get_phone_and_time_with_highest_amount_of_seconds():
 results = get_phone_and_time_with_highest_amount_of_seconds()
 
 print(f"{results['phone']} spent the longest time, {results['seconds']} seconds, on the phone during September 2016.")
-
-# I THINK THIS SOLUTION RUNS LIKE AN O(n^2)

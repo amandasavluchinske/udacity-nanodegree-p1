@@ -36,5 +36,3 @@ def get_all_unique_phone_numbers():
     return list(set(phones_list))
 
 print(f"There are {len(get_all_unique_phone_numbers())} different telephone numbers in the records.")
-
-# I THINK THIS SOLUTION RUNS LIKE AN O(n)

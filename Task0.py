@@ -43,5 +43,3 @@ def get_calls_from_csv():
 last_call = get_calls_from_csv()[-1]
 
 print(f"Last record of calls, {last_call[0]} calls {last_call[1]} at time {last_call[2]}, lasting {last_call[3]} seconds")
-
-# I THINK THIS SOLUTION RUNS LIKE AN O(1)

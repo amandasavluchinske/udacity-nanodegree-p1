@@ -66,5 +66,3 @@ def print_out_possible_telemarketers():
         print(telemarketer)
 
 print_out_possible_telemarketers()
-
-# I THINK THIS SOLUTION RUNS LIKE AN O(n^2)

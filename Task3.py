@@ -52,9 +52,9 @@ def is_bangalore(call):
 def get_area_code(phone):
     if phone[0] == '(':
         return phone[1:].split(')', 1)[0]
-    if phone[0] in [7, 8, 9]:
-        return phone[0:3]
-    if phone[0:3] == 140:
+    if phone[0] in ['7', '8', '9']:
+        return phone[0:4]
+    if phone[0:3] == '140':
         return 140
     return None
 
@@ -82,8 +82,6 @@ def print_out_list_of_codes():
 
 print_out_list_of_codes()
 
-# I THINK THIS SOLUTION RUNS LIKE AN O(n)
-
 # Part B: What percentage of calls from fixed lines in Bangalore are made
 
 def get_bangalore_bangalore_calls_percentage():
@@ -102,5 +100,3 @@ def get_bangalore_bangalore_calls_percentage():
     return round(float((len(bb_calls)/len(b_calls)) * 100), 2)
 
 print(f"{get_bangalore_bangalore_calls_percentage()} percent of calls from fixed lines in Bangalore are calls to other fixed lines in Bangalore.")
-
-# I THINK THIS SOLUTION RUNS LIKE AN O(n)
