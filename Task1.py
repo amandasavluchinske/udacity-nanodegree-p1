@@ -19,7 +19,7 @@ Print a message:
 "There are <count> different telephone numbers in the records."
 """
 
-def get_all_phone_numbers():
+def get_all_unique_phone_numbers():
     phones_list = []
     with open('texts.csv', 'r') as f:
         reader = csv.reader(f)
@@ -33,9 +33,6 @@ def get_all_phone_numbers():
         for row in calls:
             phones_list.extend([row[0], row[1]])
 
-    return phones_list
+    return list(set(phones_list))
 
-def print_unique_phones_count(unique_phones_list):
-    print(f"There are {len(unique_phones_list)} different telephone numbers in the records.")
-
-print_unique_phones_count(list(set(get_all_phone_numbers())))
+print(f"There are {len(get_all_unique_phone_numbers())} different telephone numbers in the records.")

@@ -28,11 +28,9 @@ def get_texts_from_csv():
         texts = list(reader)
         return texts
 
-def print_first_text_from_list(texts):
-    first_text = texts[0]
-    print(f"First record of texts, {first_text[0]} texts {first_text[1]} at time {first_text[2]}")
+first_text = get_texts_from_csv()[0]
 
-print_first_text_from_list(get_texts_from_csv())
+print(f"First record of texts, {first_text[0]} texts {first_text[1]} at time {first_text[2]}")
 
 # Last record of calls
 
@@ -42,8 +40,6 @@ def get_calls_from_csv():
         calls = list(reader)
         return calls
 
-def print_last_call_from_list(calls):
-    last_call = calls[-1]
-    print(f"Last record of calls, {last_call[0]} calls {last_call[1]} at time {last_call[2]}, lasting {last_call[3]} seconds")
+last_call = get_calls_from_csv()[-1]
 
-print_last_call_from_list(get_calls_from_csv())
+print(f"Last record of calls, {last_call[0]} calls {last_call[1]} at time {last_call[2]}, lasting {last_call[3]} seconds")
