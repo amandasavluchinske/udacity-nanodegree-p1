@@ -44,6 +44,11 @@ to other fixed lines in Bangalore."
 The percentage should have 2 decimal digits
 """
 
+# Part A: Find all of the area codes and mobile prefixes called by people
+
+def is_bangalore(call):
+    return call[0:5] == '(080)'
+
 def get_area_code(phone):
     if phone[0] == '(':
         return phone[1:].split(')', 1)[0]
@@ -61,7 +66,7 @@ def get_codes_called_by_people_in_bangalore():
 
         for call in calls:
             # Checks if first 5 chars of the number are (080)
-            if call[0][0:5] == '(080)':
+            if is_bangalore(call[0]):
                 code = get_area_code(call[1])
                 if not code:
                     continue
@@ -76,3 +81,24 @@ def print_out_list_of_codes():
         print(code)
 
 print_out_list_of_codes()
+
+
+# Part B: What percentage of calls from fixed lines in Bangalore are made
+
+def get_bangalore_bangalore_calls():
+    b_calls = []
+    bb_calls = []
+    with open('calls.csv', 'r') as f:
+        reader = csv.reader(f)
+        calls = list(reader)
+
+        for call in calls:
+            if is_bangalore(call[0]):
+                b_calls.append(call)
+                if is_bangalore(call[1]):
+                    bb_calls.append(call)
+    
+    return round(float((len(bb_calls)/len(b_calls)) * 100), 2)
+
+print(f"{get_bangalore_bangalore_calls()} percent of calls from fixed lines in Bangalore are calls to other fixed lines in Bangalore.")
+                
