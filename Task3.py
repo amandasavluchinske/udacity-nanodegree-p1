@@ -85,7 +85,7 @@ print_out_list_of_codes()
 
 # Part B: What percentage of calls from fixed lines in Bangalore are made
 
-def get_bangalore_bangalore_calls():
+def get_bangalore_bangalore_calls_percentage():
     b_calls = []
     bb_calls = []
     with open('calls.csv', 'r') as f:
@@ -100,5 +100,5 @@ def get_bangalore_bangalore_calls():
     
     return round(float((len(bb_calls)/len(b_calls)) * 100), 2)
 
-print(f"{get_bangalore_bangalore_calls()} percent of calls from fixed lines in Bangalore are calls to other fixed lines in Bangalore.")
+print(f"{get_bangalore_bangalore_calls_percentage()} percent of calls from fixed lines in Bangalore are calls to other fixed lines in Bangalore.")
                 
